@@ -11,7 +11,9 @@ print(os.environ['APP_SETTINGS'])
 
 @app.route('/')
 def hello():
-    return "Hello World!"
+    test = os.environ['APP_SETTINGS']
+    #return "Hello World!"
+    return test
 
 
 if __name__ == '__main__':
