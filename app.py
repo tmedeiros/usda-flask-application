@@ -1,19 +1,17 @@
 import os
-from flask import Flask
-
-# app = Flask(__name__)
+from flask_bootstrap import Bootstrap
+from flask import Flask, render_template
+from predictors import UserEntryForm
 
 app = Flask(__name__)
+bootstrap = Bootstrap(app)
 app.config.from_object(os.environ['APP_SETTINGS'])
-
-print(os.environ['APP_SETTINGS'])
 
 
 @app.route('/')
 def hello():
-    test = os.environ['APP_SETTINGS']
-    #return "Hello World!"
-    return test
+    form = UserEntryForm()
+    return render_template('index.html', title='USDA Cattle Price Prediction', form=form)
 
 
 if __name__ == '__main__':
