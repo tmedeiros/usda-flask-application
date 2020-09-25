@@ -1,12 +1,12 @@
 import os
 from flask import Flask, render_template
-from flask_bootstrap import Bootstrap
+#from flask_bootstrap import Bootstrap
 import werkzeug.urls
 
 from predictors import UserEntryForm
 
 app = Flask(__name__)
-bootstrap = Bootstrap(app)
+#bootstrap = Bootstrap(app)
 app.config.from_object(os.environ['APP_SETTINGS'])
 
 
