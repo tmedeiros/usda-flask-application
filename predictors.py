@@ -1,17 +1,18 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField
 from wtforms.validators import DataRequired
+from flask_bootstrap import Bootstrap
 
 
 class UserEntryForm(FlaskForm):
     # username = StringField('Username', validators=[DataRequired()])
-    dropdown_list_grade = [('0', '------ Please select a grade ------'), ('1', '0 - 35% Choice'),
+    dropdown_list_grade = [('0', '------- Please select a grade -------'), ('1', '0 - 35% Choice'),
                            ('2', '35 - 65% Choice'), ('3', '65 - 80% Choice'), ('4', 'Over 80% Choice'),
                            ('5', 'Total all grades')]
-    dropdown_list_purchase_type = [('0', '- Please select a Purchase Type -'), ('1', 'Formula Net'),
+    dropdown_list_purchase_type = [('0', '-- Please select a Purchase Type --'), ('1', 'Formula Net'),
                             ('2', 'Negotiated Grid Net')]
     dropdown_list_selling_basis = [('0', '--- Please select a Selling Basis ---'), ('1', 'Dressed'), ('2', 'Live')]
-    dropdown_list_class = [('0', '------ Please select a class------'), ('1', 'All Steers & Heifers'),
+    dropdown_list_class = [('0', '---- Please select a class Type ----'), ('1', 'All Steers & Heifers'),
                            ('2', 'Dairybred Steer/Heifer'), ('3', 'Heifer'), ('4', 'Mixed Steer/Heifer'),
                            ('5', 'Mixed Steer/Heifer/Cow'), ('6', 'Steer')]
     headcount = StringField('Head Count')

@@ -5,6 +5,9 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
         {% block styles %}
             <style>
@@ -17,10 +20,10 @@
                 }
             </style>
             <!-- Bootstrap CSS -->
-            {{ bootstrap.load_css() }}
+
         {% endblock %}
 
-        <title>USDA Price Prediction</title>
+        <title class="container">USDA Price Prediction</title>
 
         {% endblock %}
     </head>
@@ -29,91 +32,94 @@
         {% block content %}
             <div class="container">
                 <h1>USDA Price Prediction</h1>
-                <hr>
-                <form action="" method="post" novalidate>
-                    {{ form.hidden_tag() }}
-                    <div class="row">
-                        <p style="margin-right: 20px">
-                            {{ form.headcount.label }}<br>
-                            {{ form.headcount(size=32) }}
-                        </p>
-                        <p>
-                            {{ form.weight_range_low.label }}<br>
-                            {{ form.weight_range_low(size=32) }}
-                        </p>
-                    </div>
+                <div class="row">
 
-                    <div class="row">
-                        <p style="margin-right: 20px">
-                            {{ form.weight_range_high.label }}<br>
-                            {{ form.weight_range_high(size=32) }}
-                        </p>
-                        <p>
-                            {{ form.average_weight.label }}<br>
-                            {{ form.average_weight(size=32) }}
-                        </p>
-                    </div>
+                    <hr>
+                    <form action="" method="post" novalidate>
+                        {{ form.hidden_tag() }}
+                        <div class="col-sm-5">
+                            <p style="margin-right: 20px">
+                                {{ form.headcount.label }}<br>
+                                {{ form.headcount(size=32) }}
+                            </p>
+                            <p>
+                                {{ form.weight_range_low.label }}<br>
+                                {{ form.weight_range_low(size=32) }}
+                            </p>
+                        </div>
 
-                    <div class="row">
-                        <p style="margin-right: 20px">
-                            {{ form.dressed_percentage.label }}<br>
-                            {{ form.dressed_percentage(size=32) }}
-                        </p>
-                        <p>
-                            {{ form.price_range_low.label }}<br>
-                            {{ form.price_range_low(size=32) }}
-                        </p>
-                    </div>
+                        <div class="col-sm-5">
+                            <p style="margin-right: 20px">
+                                {{ form.weight_range_high.label }}<br>
+                                {{ form.weight_range_high(size=32) }}
+                            </p>
+                            <p>
+                                {{ form.average_weight.label }}<br>
+                                {{ form.average_weight(size=32) }}
+                            </p>
+                        </div>
 
-                    <div class="row">
-                        <p style="margin-right: 20px">
-                            {{ form.price_range_high.label }}<br>
-                            {{ form.price_range_high(size=32) }}
-                        </p>
-                        <p>
-                            {{ form.report_year.label }}<br>
-                            {{ form.report_year(size=32) }}
-                        </p>
-                    </div>
+                        <div class="col-sm-5">
+                            <p style="margin-right: 20px">
+                                {{ form.dressed_percentage.label }}<br>
+                                {{ form.dressed_percentage(size=32) }}
+                            </p>
+                            <p>
+                                {{ form.price_range_low.label }}<br>
+                                {{ form.price_range_low(size=32) }}
+                            </p>
+                        </div>
 
-                    <div class="row">
-                        <p style="margin-right: 20px">
-                            {{ form.report_month.label }}<br>
-                            {{ form.report_month(size=32) }}
-                        </p>
-                        <p>
-                            {{ form.purchase_type.label }}<br>
-                            {{ form.purchase_type(size=1) }}
-                        </p>
-                    </div>
+                        <div class="col-sm-5">
+                            <p style="margin-right: 20px">
+                                {{ form.price_range_high.label }}<br>
+                                {{ form.price_range_high(size=32) }}
+                            </p>
+                            <p>
+                                {{ form.report_year.label }}<br>
+                                {{ form.report_year(size=32) }}
+                            </p>
+                        </div>
 
-                    <div class="row">
-                        <p style="margin-right: 20px">
-                            {{ form.selling_basis.label }}<br>
-                            {{ form.selling_basis(size=1) }}
-                        </p>
-                        <p>
-                            {{ form.class_type.label }}<br>
-                            {{ form.class_type(size=1) }}
-                        </p>
-                    </div>
+                        <div class="col-sm-5">
+                            <p style="margin-right: 20px">
+                                {{ form.report_month.label }}<br>
+                                {{ form.report_month(size=32) }}
+                            </p>
+                            <p>
+                                {{ form.purchase_type.label }}<br>
+                                {{ form.purchase_type(size=1) }}
+                            </p>
+                        </div>
 
-                    <div class="row">
-                        <p>
-                            {{ form.grade.label }}<br>
-                            {{ form.grade(size=1) }}
-                        </p>
-                    </div>
-                    <div class="row">
-                        <p>{{ form.submit() }}</p>
-                    </div>
-                </form>
+                        <div class="col-sm-5">
+                            <p style="margin-right: 20px">
+                                {{ form.selling_basis.label }}<br>
+                                {{ form.selling_basis(size=1) }}
+                            </p>
+                            <p>
+                                {{ form.class_type.label }}<br>
+                                {{ form.class_type(size=1) }}
+                            </p>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <p>
+                                {{ form.grade.label }}<br>
+                                {{ form.grade(size=1) }}
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>{{ form.submit() }}</p>
+                        </div>
+                    </form>
+                </div>
             </div>
         {% endblock %}
 
         {% block scripts %}
             <!-- Optional JavaScript -->
-            {{ bootstrap.load_js() }}
+
         {% endblock %}
     </body>
 </html>
