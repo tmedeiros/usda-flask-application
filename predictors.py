@@ -28,3 +28,4 @@ class UserEntryForm(FlaskForm):
     class_type = SelectField('Class Type', choices=dropdown_list_class)
     grade = SelectField('Grade', choices=dropdown_list_grade)
     submit = SubmitField('Submit')
+    result = ''

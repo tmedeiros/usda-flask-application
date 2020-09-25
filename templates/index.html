@@ -29,14 +29,13 @@
     </head>
     <body>
         <!-- Your page content -->
-        {% block content %}
             <div class="container">
                 <h1>USDA Price Prediction</h1>
+                <h2 style="color:green">Recommended Cattle Price: ${{ form.result }}</h2>
                 <div class="row">
-
                     <hr>
-                    <form action="" method="post" novalidate>
-                        {{ form.hidden_tag() }}
+                    <form action="" method="post"  enctype="multipart/form-data" novalidate>
+
                         <div class="col-sm-5">
                             <p style="margin-right: 20px">
                                 {{ form.headcount.label }}<br>
@@ -112,10 +111,6 @@
                         <div class="col-sm-6">
                             <p>{{ form.submit() }}</p>
                         </div>
-                    </form>
-                </div>
-            </div>
-        {% endblock %}
 
         {% block scripts %}
             <!-- Optional JavaScript -->
