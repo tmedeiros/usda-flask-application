@@ -1,6 +1,7 @@
 import gzip
 import os
 import pickle
+import sklearn
 
 import numpy as np
 from flask import Flask, request, render_template, flash
@@ -17,7 +18,6 @@ app.config.from_object(os.environ['APP_SETTINGS'])
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = UserEntryForm()
-    form.result = ''
     if request.method == 'POST':
         form.result = ' '
         user_data = [form.headcount.data, form.weight_range_low.data, form.weight_range_high.data,
